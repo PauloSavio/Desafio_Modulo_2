@@ -17,7 +17,8 @@ public class Desafio_Modulo_2 {
             //Menu
             System.out.println("Digite 1 para cadastrar um funcionário");
             System.out.println("Digite 2 para exibir a lista de funcionários");
-            System.out.println("Digite 3 para sair");
+            System.out.println("Digite 3 para remover um funcionário usando o CPF");
+            System.out.println("Digite 4 para sair");
             opcao = leitor.nextInt();
             leitor.nextLine(); //Assim o leitor lê o enter mas não armazena, aí não dá erro na mudança de int pra String
 
@@ -43,7 +44,24 @@ public class Desafio_Modulo_2 {
                     System.out.println("Contato: " + listaDeFuncionarios.get(chaveFuncionario) + " CPF: " + chaveFuncionario);
                 }
             }
+
             else if (opcao == 3){
+                //Removendo funcionário
+                System.out.println("Digite o CPF a ser removido");
+                String cpfRemovido = "";
+                String cpfASerRemovido = leitor.nextLine();
+                for (String cpfFuncionario: listaDeFuncionarios.keySet()){
+                    if (cpfFuncionario.equals(cpfASerRemovido)){
+                        System.out.println("CPF removido com sucesso");
+                        cpfRemovido = cpfASerRemovido; //Não usei o break pra resolver o problema de tamanho da lista
+                    }
+                }
+
+                listaDeFuncionarios.remove(cpfRemovido);
+
+            }
+
+            else if (opcao == 4){
                 //Sair
                 chave = false;
             }
