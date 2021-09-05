@@ -16,7 +16,8 @@ public class Desafio_Modulo_2 {
         while (chave == true){
             //Menu
             System.out.println("Digite 1 para cadastrar um funcionário");
-            System.out.println("Digite 2 para sair");
+            System.out.println("Digite 2 para exibir a lista de funcionários");
+            System.out.println("Digite 3 para sair");
             opcao = leitor.nextInt();
             leitor.nextLine(); //Assim o leitor lê o enter mas não armazena, aí não dá erro na mudança de int pra String
 
@@ -35,7 +36,14 @@ public class Desafio_Modulo_2 {
                 //Adicionando no HashMap
                 listaDeFuncionarios.put(cpf, " Nome: " + nome + " Telefone: " + telefone + " Email: " + email);
             }
+
             else if (opcao == 2){
+                //Percorrer a lista para exibir
+                for (String chaveFuncionario: listaDeFuncionarios.keySet()) {
+                    System.out.println("Contato: " + listaDeFuncionarios.get(chaveFuncionario) + " CPF: " + chaveFuncionario);
+                }
+            }
+            else if (opcao == 3){
                 //Sair
                 chave = false;
             }
